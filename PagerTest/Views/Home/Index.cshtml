@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<PagerTest.Controllers.Customer>
+@using MvcContrib.Pagination
+@using MVCDiggPager
 
 @{
 		ViewBag.Title = "Home Page";
@@ -6,6 +8,7 @@
 
 <h2>@ViewBag.Message</h2>
 
+@Html.Pager((IPagination)Model)
 
 @foreach (var item in Model)
 {
