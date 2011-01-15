@@ -8,6 +8,10 @@
 
 <h2>@ViewBag.Message</h2>
 
+@{ var pager = Html.Pager((IPagination)Model); }
+
+@Html.Raw(pager.ToString())
+
 @Html.Pager((IPagination)Model)
 
 @foreach (var item in Model)
