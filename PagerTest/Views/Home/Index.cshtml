@@ -1,0 +1,13 @@
+﻿@model IEnumerable<PagerTest.Controllers.Customer>
+
+@{
+		ViewBag.Title = "Home Page";
+}
+
+<h2>@ViewBag.Message</h2>
+
+
+@foreach (var item in Model)
+{
+	<p>@item.Name</p>
+}
