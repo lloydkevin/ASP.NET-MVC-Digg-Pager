@@ -10,11 +10,12 @@
 
 @{ var pager = Html.Pager((IPagination)Model); }
 
-@Html.Raw(pager.ToString())
+<div class="pager">@pager</div>
 
-@Html.Pager((IPagination)Model)
 
 @foreach (var item in Model)
 {
 	<p>@item.Name</p>
 }
+
+<div class="pager">@pager</div>
