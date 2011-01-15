@@ -1,0 +1,19 @@
+ASP.NET MVC has no built in pagin support. After searching for for a while, I came across this sample:
+http://blogs.taiga.nl/martijn/2008/08/27/paging-with-aspnet-mvc/
+from Martin Boland
+
+He has since expanded this for MVC 2: https://github.com/martijnboland/MvcPaging/commits/mvc2
+
+This was perfect for what I needed, except I couldn't figure out a way to make it play nice with already existing query strings.
+
+
+I soon after came across the built in pager in the MVCContrib library 
+http://mvccontrib.codeplex.com/wikipage?title=Grid&referringTitle=Documentation
+
+But their paging was quite boring (first, last, current page, etc).
+
+
+So I decided to combine the two approaches and came up with what I have now. MvcContrib already handled Paging an IEnumerable and even sorting.
+I decided to run with this and modify they way it outputs to look like Martin's Digg style.
+
+Hope this helps.
