@@ -15,7 +15,7 @@ namespace MVCDiggPager
 		/// <param name="helper">The HTML Helper</param>
 		/// <param name="viewDataKey">The viewdata key</param>
 		/// <returns>A Pager component</returns>
-		public static Pager CreatePager(this HtmlHelper helper, string viewDataKey)
+		public static DiggPager CreatePager(this HtmlHelper helper, string viewDataKey)
 		{
 			var dataSource = helper.ViewContext.ViewData.Eval(viewDataKey) as IPagination;
 
@@ -34,17 +34,17 @@ namespace MVCDiggPager
 		/// <param name="helper">The HTML Helper</param>
 		/// <param name="pagination">The datasource</param>
 		/// <returns>A Pager component</returns>
-		public static Pager CreatePager(this HtmlHelper helper, IPagination pagination)
+		public static DiggPager CreatePager(this HtmlHelper helper, IPagination pagination)
 		{
-			return new Pager(pagination, helper.ViewContext);
+			return new DiggPager(pagination, helper.ViewContext);
 		}
 
-		public static MvcHtmlString Pager(this HtmlHelper helper, string viewDataKey)
+		public static MvcHtmlString DiggPager(this HtmlHelper helper, string viewDataKey)
 		{
 			return MvcHtmlString.Create(helper.CreatePager(viewDataKey).ToString());
 		}
 
-		public static MvcHtmlString Pager(this HtmlHelper helper, IPagination pagination)
+		public static MvcHtmlString DiggPager(this HtmlHelper helper, IPagination pagination)
 		{
 			return MvcHtmlString.Create(helper.CreatePager(pagination).ToString());
 		}

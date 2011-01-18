@@ -12,7 +12,7 @@ namespace MVCDiggPager
 	/// <summary>
 	/// Renders a pager component from an IPagination datasource.
 	/// </summary>
-	public class Pager
+	public class DiggPager
 	{
 		private readonly IPagination _pagination;
 		private readonly ViewContext _viewContext;
@@ -31,7 +31,7 @@ namespace MVCDiggPager
 		/// </summary>
 		/// <param name="pagination">The IPagination datasource</param>
 		/// <param name="context">The view context</param>
-		public Pager(IPagination pagination, ViewContext context)
+		public DiggPager(IPagination pagination, ViewContext context)
 		{
 			_pagination = pagination;
 			_viewContext = context;
@@ -48,7 +48,7 @@ namespace MVCDiggPager
 		/// <summary>
 		/// Specifies the query string parameter to use when generating pager links. The default is 'page'
 		/// </summary>
-		public Pager QueryParam(string queryStringParam)
+		public DiggPager QueryParam(string queryStringParam)
 		{
 			_pageQueryName = queryStringParam;
 			return this;
@@ -57,7 +57,7 @@ namespace MVCDiggPager
 		/// <summary>
 		/// Text for the 'prev' link
 		/// </summary>
-		public Pager Previous(string previous)
+		public DiggPager Previous(string previous)
 		{
 			_paginationPrev = previous;
 			return this;
@@ -66,7 +66,7 @@ namespace MVCDiggPager
 		/// <summary>
 		/// Text for the 'next' link
 		/// </summary>
-		public Pager Next(string next)
+		public DiggPager Next(string next)
 		{
 			_paginationNext = next;
 			return this;
@@ -76,7 +76,7 @@ namespace MVCDiggPager
 		/// Uses a lambda expression to generate the URL for the page links.
 		/// </summary>
 		/// <param name="urlBuilder">Lambda expression for generating the URL used in the page links</param>
-		public Pager Link(Func<int, string> urlBuilder)
+		public DiggPager Link(Func<int, string> urlBuilder)
 		{
 			_urlBuilder = urlBuilder;
 			return this;
